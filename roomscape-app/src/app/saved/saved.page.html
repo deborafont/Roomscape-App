@@ -1,0 +1,61 @@
+<ion-header>
+    <ion-toolbar color="azuloscuro">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="tabs/profile-page"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="guardados">
+    <ion-grid class="principal">
+      <ion-row class="avatar">
+        <ion-avatar>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Avatar_cat.png">
+        </ion-avatar>
+      </ion-row>
+  
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="4" class="ion-margin-vertical">
+          <div class="ion-text-center">
+            <ion-button size="large" fill="clear" [routerLink]="['/complete']"><i class="fas fa-unlock"><span> {{DoneRooms.length}} </span>
+            </i></ion-button><br>
+            <ion-label>Completados</ion-label>
+          </div>
+        </ion-col>
+        <ion-col size="4" class="ion-margin-vertical">
+          <div class="ion-text-center">
+            <ion-button size="large" fill="clear"><i class="fas fa-heart"><span> {{SaveRooms.length}} </span></i></ion-button><br>
+            <ion-label class="savedLabel">Guardados</ion-label>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid> 
+
+    <div class="triangulo">
+
+    </div>
+
+    <div class="secundario">
+      <ion-grid>
+        <ion-row *ngFor="let room of SaveRooms">
+          <ion-col>
+            <ion-card>
+            <ion-img src='{{room.roomimage}}'></ion-img>
+            <ion-card-header>
+              <ion-card-title><b>{{room.roomname}}</b> - {{room.theme}}</ion-card-title>
+            <ion-row>
+                <ion-col class="iconos">
+                  <ion-icon (click)="toggleSaveRoom(room)" *ngIf="room.save !=true" class="favorite-icon empty" name="heart-empty"></ion-icon>
+                  <ion-icon (click)="toggleSaveRoom(room)" *ngIf="room.save ==true" class="favorite-icon heart" name="heart"></ion-icon>
+                  <ion-icon  (click)="toggleDoneRoom(room)" *ngIf="room.done !=true" class="fas fa-lock lock" name="lock"></ion-icon>
+                  <ion-icon  (click)="toggleDoneRoom(room)" *ngIf="room.done ==true" class="fas fa-unlock unlock" name="unlock"></ion-icon>
+                </ion-col>
+              </ion-row>
+              </ion-card-header>
+          </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </ion-content>
+  

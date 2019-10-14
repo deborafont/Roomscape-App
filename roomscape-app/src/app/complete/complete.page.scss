@@ -1,0 +1,104 @@
+ion-content.completados{
+    --background:linear-gradient(to bottom, #070024 0%, #095460 75%, #03605d 100%);
+    font-family: 'Montserrat', sans-serif;
+    ion-grid.principal{
+        ion-row.avatar{
+            ion-avatar {
+                width: 100% !important;
+                height: 100% !important;
+                max-width: calc(130px + (180 - 130) * ((100vw - 300px) / (1020 - 320)))  !important;
+                max-height: calc(130px + (180 - 130) * ((100vw - 300px) / (1020 - 320)))  !important;
+                display: block;
+                margin: 0 auto;
+                border: 3px solid var(--ion-color-light) !important;
+            }
+        }
+    
+        ion-col{
+            margin: 0;
+            padding: 0;
+            ion-button{
+                --color: var(--ion-color-light);
+                --ripple-color: var(--ion-color-tabsbtn);
+                --border-bottom: 1px solid white;
+                --box-shadow: none;
+                font-size: calc(20px + (30 - 20) * ((100vw - 300px) / (1020 - 320)));
+                height: calc(30px + (40 - 30) * ((100vw - 300px) / (1020 - 320)));
+                font-weight: lighter;
+               span{
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-weight: lighter;
+               }
+               .fa-unlock{
+                color: var(--ion-color-tabsbtn);
+               }
+            }
+            ion-button:hover{
+                --color: var(--ion-color-tabsbtn);
+            }
+            ion-label{
+                font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1020 - 320)));
+                color: var(--ion-color-light);
+            }
+            ion-label.completLabel{
+                color: var(--ion-color-tabsbtn);
+            }
+        }
+    }
+    .triangulo{
+        border-right: 50vw solid var(--ion-color-white);
+        border-top: 30px solid transparent;
+        border-left: 50vw solid var(--ion-color-white);
+    }
+    .secundario{
+        background-color: var(--ion-color-white);
+        background-repeat: repeat-y;
+        background-attachment: fixed;
+        font-family: 'Montserrat', sans-serif;
+        height: 100vmin;
+        overflow-y:scroll;
+        ion-grid{
+            ion-card{
+                border-radius: 10px 10px 10px 10px;
+                box-shadow: 2px 1px 6px 1px rgba(0,0,0,0.09);
+    
+                ion-card-header{
+                    background-color: var(--ion-color-white);
+                    box-shadow: 2px 1px 6px 1px rgba(0,0,0,0.09);
+                    text-align:center;
+                    
+                }
+            
+            }
+        }
+        ion-card-header{
+            background-color: var(--ion-color-azuldetails);
+            text-align: center;
+            
+        }
+    
+        .fa{
+            color: lightslategray !important;
+          }
+        }
+      
+        ion-col.iconos{
+          font-size:  calc(18px + (16 - 18) * ((100vw - 300px) / (1020 - 320)));
+          ion-icon{
+            padding: 0 5px 0 5px;
+          }
+          .heart{
+              color: var(--ion-color-danger);
+          }
+          .unlock{
+              color: var(--ion-color-success);
+          }
+    }
+    
+} 
+
+
+
+
+
+

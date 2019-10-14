@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-searchbar 
+    mode="ios"
+    showCancelButton="focus"
+    placeholder="Buscar roomscape"
+    cancelButtonText="Cancelar"
+    animated
+    [(ngModel)]="searchTerm" (ionChange)="setFilterItems()">
+  </ion-searchbar>
+</ion-header>
+
+<ion-content class=background>
+
+<!--ROOMS-->
+<ion-grid *ngIf="roomscapes && roomscapes.length > 0 && searchTerm == ''" class="ion-align-items-start">
+  <ion-row *ngFor="let roomscape of roomscapes">
+    <ion-col>
+      <ion-card *ngFor="let room of roomscape.rooms" (click) = "goToRoomscape(roomscape)">
+      <ion-img src='{{room.roomimage}}'></ion-img>
+      <ion-card-header>
+        <ion-card-title><b>{{room.roomname}}</b> - {{room.theme}}</ion-card-title>
+        <ion-card-subtitle >{{roomscape.name}}</ion-card-subtitle>
+      </ion-card-header>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<!--FILTERED ROOMS-->
+<ion-grid *ngIf="filteredRooms && searchTerm != '' && filteredRooms.length > 0" align-items-start>
+  <ion-row *ngFor="let roomscape of filteredRooms">
+    <ion-col>
+      <ion-card *ngFor="let room of roomscape.rooms" (click) = "goToRoomscape(roomscape)">
+      <ion-img src={{room.roomimage}}></ion-img>
+      <ion-card-header>
+        <ion-card-title><b>{{room.roomname}}</b> - {{room.theme}}</ion-card-title>
+        <ion-card-subtitle >{{roomscape.name}}</ion-card-subtitle>
+      </ion-card-header>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+</ion-content>

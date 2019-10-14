@@ -1,0 +1,71 @@
+
+<ion-content padding class="form-content, background">
+
+  <div class="welcome"> 
+
+    <ion-grid *ngIf="showLogin === false">
+      <ion-row>
+        <ion-col class="animated bounceInLeft" >
+          <img src="../../assets/imgs/FindTheEscapeLogo.png" width="140px" height="120px" class="ion-float-right" alt="Logotipo de la aplicación: Find The Escape">
+        </ion-col>
+        <ion-col class="animated bounceInRight">
+          <img src="../../assets/imgs/FindTheEscape.png" height="120px" class=" ion-float-left" alt="Lema de la aplicación: Find The Scape">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!-- Al clicar el botón y desplegarse el login, este botón desaparece -->
+    <ion-button class="animated fadeIn" expand="block" shape="round" fill="outline" color="light" (click)="showLogin = true" *ngIf="showLogin === false">Empezar</ion-button>
+
+  </div>
+
+ <!-- Login Form-->
+  <!-- Al presionar el botón "Empezar", este div pasa a true y se desplega el login -->
+  <div *ngIf="showLogin === true">
+
+    <form class="form" [formGroup]="validations_form" (ngSubmit)="tryLogin(validations_form.value)">
+
+      <ion-item color="translucent" lines="none">
+        <ion-label position="floating" color="light">Usuario</ion-label>
+        <ion-input  type="text" formControlName="user" color="welcomebtn"></ion-input>
+      </ion-item>
+      <ion-item color="translucent" lines="none">
+        <ion-label position="floating" color="light">Email</ion-label>
+        <ion-input  type="text" formControlName="email" color="welcomebtn"></ion-input>
+      </ion-item>
+
+      <div class="validation-errors">
+
+        <ng-container *ngFor="let validation of validation_messages.email">
+          <div class="error-message" *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+
+      </div>
+
+      <ion-item color="translucent" lines="none">
+        <ion-label position="floating" color="light">Contraseña</ion-label>
+        <ion-input type="password" formControlName="password" color="welcomebtn"></ion-input>
+      </ion-item>
+
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.password">
+          <div class="error-message" *ngIf="validations_form.get('password').hasError(validation.type) && (validations_form.get('password').dirty || validations_form.get('password').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <ion-button class="submit-btn" shape="round" color="light" expand="block" type="submit" [disabled]="!validations_form.valid">Entrar</ion-button>
+      <label class="error-message">{{errorMessage}}</label>
+
+    </form>
+    
+    <p class="go-to-register">
+      ¿No tienes cuenta? <a (click)="goRegisterPage()">Crear una cuenta.</a>
+    </p>
+
+  </div>
+
+</ion-content>

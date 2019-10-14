@@ -1,0 +1,38 @@
+<ion-content padding class="form-content, background">
+  <form class="form, welcome" [formGroup]="validations_form" (ngSubmit)="tryRegister(validations_form.value)">
+  
+    <ion-item color="translucent" lines="none"> 
+      <ion-label position="floating" color="white">Usuario</ion-label>
+      <ion-input type="text" formControlName="user" color="welcomebtn"></ion-input>
+    </ion-item>
+    <ion-item color="translucent" lines="none">
+      <ion-label position="floating" color="white">Email</ion-label>
+      <ion-input type="text" formControlName="email" color="welcomebtn"></ion-input>
+    </ion-item >
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.email">
+        <div class="error-message" *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item color="translucent" lines="none">
+      <ion-label position="floating" color="white">Contraseña</ion-label>
+      <ion-input type="password" formControlName="password" color="welcomebtn"></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.password">
+        <div class="error-message" *ngIf="validations_form.get('password').hasError(validation.type) && (validations_form.get('password').dirty || validations_form.get('password').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-button class="submit-btn" shape="round" expand="block" color="light" type="submit" [disabled]="!validations_form.valid">Registrarse</ion-button>
+    <label class="error-message">{{errorMessage}}</label>
+    <label class="success-message">{{successMessage}}</label>
+  </form>
+  <p class="go-to-login">¿Tienes ya una cuenta? <a (click)="goLoginPage()">Intenta entrar.</a></p>
+
+</ion-content>

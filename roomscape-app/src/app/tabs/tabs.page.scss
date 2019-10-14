@@ -1,0 +1,16 @@
+// Estilo tabs
+
+.fas{
+    color: var(--ion-color-tabsbtn);
+    font-size: calc(20px + (30 - 20) * ((100vw - 300px) / (1020 - 320)));
+}
+
+ion-tab-button:hover{
+    .fas{
+        // font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
+        font-size: calc(23px + (33 - 23) * ((100vw - 300px) / (1020 - 320)));
+    }
+    border-bottom: 3px solid var(--ion-color-tabsbtn);
+    --ripple-color:var(--ion-color-welcomebtn);
+
+}

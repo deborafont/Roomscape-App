@@ -1,0 +1,79 @@
+ion-back-button{
+  --ripple-color:var(--ion-color-white);
+
+}
+
+ion-content{
+  font-family: 'Montserrat', sans-serif;
+  ion-img{
+    margin-bottom: 0px;
+  }
+  ion-card-header{
+    background-color: var(--ion-color-azuldetails);
+    text-align: center;
+    ion-card-title, ion-card-subtitle{
+      color: white;
+    }
+  }
+  h1{
+    background: var(--ion-color-azuloscuro);   
+    color: white;
+    font-size: calc(20px + (25 - 20) * ((100vw - 300px) / (1020 - 320)));
+    padding: 1.6rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0px;
+  }
+
+  ion-grid{
+    margin: 0 auto;
+    padding: 0px;
+    .caractSala{
+      ion-col{
+        text-align:center;
+        color:var(--ion-color-azuldetails);
+        font-size: calc(16px + (21 - 16) * ((100vw - 300px) / (1020 - 320)));
+        font-weight: bold;
+      }
+
+    }
+    .infoSala, .webSala{
+      ion-col{
+        text-align:center !important;
+        font-size: calc(16px + (21 - 16) * ((100vw - 300px) / (1020 - 320)));
+        i{
+          color: var(--ion-color-azuloscuro);
+        }
+        a{
+          color: var(--ion-color-azuloscuro);
+          text-decoration: none;
+        }
+      }
+    }
+    .infoSala{
+      padding: 0.5rem 0 0 0;
+      ion-col{
+        padding: 0px;
+      }
+    }
+    .webSala{
+      padding: 0 0 0.5rem 0;
+    }
+    ion-button, .fa{
+      color: lightslategray !important;
+    }
+  }
+
+  ion-col.iconos{
+    font-size:  calc(18px + (16 - 18) * ((100vw - 300px) / (1020 - 320)));
+    ion-icon{
+      padding: 0 5px 0 5px;
+    }
+    .heart{
+        color: var(--ion-color-danger);
+    }
+    .unlock{
+        color: var(--ion-color-success);
+    }
+}
+}

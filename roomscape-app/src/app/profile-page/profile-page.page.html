@@ -1,0 +1,36 @@
+
+<ion-content class="perfil">
+  <ion-grid>
+    <ion-row class="avatar">
+      <ion-avatar>
+        <img src="../../assets/imgs/avatarCat.png">
+      </ion-avatar>
+    </ion-row>
+
+    <ion-row class="username">
+      <ion-title class="ion-text-center">
+        <h1>Hola, {{ username }}</h1>
+      </ion-title>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center botones">
+      <ion-col size="4" class="ion-margin-vertical">
+        <div class="ion-text-center">
+          <ion-button size="large" fill="clear" [routerLink]="['/complete']"><i class="fas fa-unlock"><span> {{DoneRooms.length}} </span>
+          </i></ion-button><br>
+          <ion-label>Completados</ion-label>
+        </div>
+      </ion-col>
+      <ion-col size="4" class="ion-margin-vertical">
+        <div class="ion-text-center">
+          <ion-button size="large" fill="clear"[routerLink]="['/saved']"><i class="fas fa-heart"><span> {{SaveRooms.length}} </span></i></ion-button><br>
+          <ion-label>Guardados</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+  <ion-button class="salir" expand="full" (click)="logout()"> Salir </ion-button>
+  
+</ion-content>

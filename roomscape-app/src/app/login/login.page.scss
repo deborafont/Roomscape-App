@@ -1,0 +1,62 @@
+
+ion-content.background{
+  //--background:linear-gradient(to bottom, #0700249f 0%, #0954609c 75%, #03605d98 100%), url(../../assets/imgs/PuertaLogin.jpg) no-repeat center center / cover;
+  --background: url(../../assets/imgs/PuertaLogin2.jpg) no-repeat center center / cover;
+
+  .welcome{
+    margin-top: 30vh;
+  }
+  .welcome ion-button{
+    margin-top: 10vh;
+    --transition: 
+  }
+
+  p {
+    color: white;
+    font-size: 0.9rem;
+  }
+  p a{
+    color: rgb(52, 192, 187);
+  }
+  ion-input{
+    border-bottom:  1px solid #ffffffd0;
+    font-size: 5vw;
+  }
+  ion-input:hover{
+    border-bottom:  2px solid rgb(52, 192, 187);
+  }
+  ion-item:hover{
+    background-color: rgba(0, 0, 0, 0.425);
+  }
+  
+  ion-label{
+    color: white !important;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.671);
+  }
+  .item-native{
+    border:none;
+  }
+  .error-message
+  {
+   color: var(--ion-color-light);
+   font-size: 0.8rem;
+  }
+  
+  .go-to-register
+  {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .submit-btn
+  {
+    margin-top: 40px;
+  }
+  
+  .fadeIn{
+    animation-delay: 0.8s;
+  }
+  
+  
+  
+}
